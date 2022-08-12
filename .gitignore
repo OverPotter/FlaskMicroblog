@@ -1,5 +1,8 @@
 app.db
+
 /migrations/*
 !/migrations/versions/
-/logs/*
+
+/logs/microblog.*
+!/logs/
 
