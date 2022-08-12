@@ -1,32 +1,54 @@
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        html, body, h1, h2, h3, h4, h5, h6 {
+            font-family: "Roboto", sans-serif
+        }
+    </style>
     {% if title %}
-    <title>{{ title }} - microblog</title>
+        <title>{{ title }} - microblog</title>
     {% else %}
-    <title>microblog</title>
+        <title>microblog</title>
     {% endif %}
 </head>
-<body>
-<div>
+<body class="w3-light-grey">
+<div class="w3-content w3-margin-top" style="max-width:1400px;">
     Microblog:
     <a href="{{ url_for('index') }}">Home</a>
     {% if current_user.is_anonymous %}
-    <a href="{{ url_for('login') }}">Login</a>
+        <a href="{{ url_for('login') }}">Login</a>
     {% else %}
-    <a href="{{ url_for('user', username=current_user.username) }}">Profile</a>
-    <a href="{{ url_for('logout') }}">Logout</a>
+        <a href="{{ url_for('user', username=current_user.username) }}">Profile</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
     {% endif %}
 </div>
 <hr>
 {% with messages = get_flashed_messages() %}
-{% if messages %}
-<ul>
-    {% for message in messages %}
-    <li>{{ message }}</li>
-    {% endfor %}
-</ul>
-{% endif %}
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
 {% endwith %}
 {% block content %}{% endblock %}
+
+<footer class="w3-container w3-teal w3-center w3-margin-top">
+    <p>Find me on social media.</p>
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+
 </body>
 </html>
