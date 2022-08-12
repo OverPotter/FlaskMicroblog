@@ -67,3 +67,9 @@ sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed
 [parameters: ('admin', 'PM', 3)]
 (Background on this error at: https://sqlalche.me/e/14/gkpj)
 2022-08-11 19:07:07,795 INFO: Microblog startup [in D:\Develop\Python_app\Microblog\app\__init__.py:47]
+2022-08-12 00:18:13,246 INFO: Microblog startup [in D:\Develop\Python_app\Microblog\app\__init__.py:47]
+2022-08-12 00:18:34,612 INFO: Microblog startup [in D:\Develop\Python_app\Microblog\app\__init__.py:47]
+2022-08-12 00:18:41,518 INFO: Microblog startup [in D:\Develop\Python_app\Microblog\app\__init__.py:47]
+2022-08-12 00:20:57,086 INFO: Microblog startup [in D:\Develop\Python_app\Microblog\app\__init__.py:47]
+2022-08-12 00:21:00,590 INFO: Microblog startup [in D:\Develop\Python_app\Microblog\app\__init__.py:47]
+2022-08-12 00:21:18,856 INFO: Microblog startup [in D:\Develop\Python_app\Microblog\app\__init__.py:47]
