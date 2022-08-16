@@ -1,5 +1,12 @@
 {% extends 'bootstrap/base.html' %}
 
+{% block scripts %}
+    {{ super() }}
+    {{ moment.include_moment() }}
+    {# change laguage for moment.js/Flask Moment #}
+    {{ moment.lang('en') }}
+{% endblock %}
+
 {% block title %}
     {% if title %}{{ title }} - Microblog{% else %}Welcome to Microblog{% endif %}
 {% endblock %}
