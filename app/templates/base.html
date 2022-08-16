@@ -1,55 +1,51 @@
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        html, body, h1, h2, h3, h4, h5, h6 {
-            font-family: "Roboto", sans-serif
-        }
-    </style>
-    {% if title %}
-        <title>{{ title }} - microblog</title>
-    {% else %}
-        <title>microblog</title>
-    {% endif %}
-</head>
-<body class="w3-light-grey">
-<div class="w3-content w3-margin-top" style="max-width:1400px;">
-    Microblog:
-    <a href="{{ url_for('index') }}">Home</a>
-    <a href="{{ url_for('explore') }}">Explore</a>
-    {% if current_user.is_anonymous %}
-        <a href="{{ url_for('login') }}">Login</a>
-    {% else %}
-        <a href="{{ url_for('user', username=current_user.username) }}">Profile</a>
-        <a href="{{ url_for('logout') }}">Logout</a>
-    {% endif %}
-</div>
-<hr>
-{% with messages = get_flashed_messages() %}
-    {% if messages %}
-        <ul>
-            {% for message in messages %}
-                <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}
-{% endwith %}
-{% block content %}{% endblock %}
+{% extends 'bootstrap/base.html' %}
 
-<footer class="w3-container w3-teal w3-center w3-margin-top">
-    <p>Find me on social media.</p>
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
-    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-</footer>
+{% block title %}
+    {% if title %}{{ title }} - Microblog{% else %}Welcome to Microblog{% endif %}
+{% endblock %}
 
-</body>
-</html>
+{% block navbar %}
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{{ url_for('index') }}">Microblog</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                    <li><a href="{{ url_for('explore') }}">Explore</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    {% if current_user.is_anonymous %}
+                        <li><a href="{{ url_for('login') }}">Login</a></li>
+                    {% else %}
+                        <li><a href="{{ url_for('user', username=current_user.username) }}">Profile</a></li>
+                        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-info" role="alert">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        {# application content needs to be provided in the app_content block #}
+        {% block app_content %}{% endblock %}
+    </div>
+{% endblock %}
