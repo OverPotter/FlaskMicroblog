@@ -1,0 +1,57 @@
+2022-08-16 11:15:14,571 INFO: Microblog startup [in D:\Develop\Python_app\Microblog\app\__init__.py:52]
+2022-08-16 13:34:54,273 INFO: Microblog startup [in D:\Develop\Python_app\Microblog\app\__init__.py:54]
+2022-08-16 21:24:02,328 INFO: Microblog startup [in D:\Develop\Python_app\Microblog\app\__init__.py:54]
+2022-08-16 21:24:07,191 ERROR: Exception on / [GET] [in D:\Develop\Python_app\Microblog\venv\lib\site-packages\flask\app.py:1741]
+Traceback (most recent call last):
+  File "D:\Develop\Python_app\Microblog\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\Develop\Python_app\Microblog\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\Develop\Python_app\Microblog\venv\lib\site-packages\flask\app.py", line 1818, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "D:\Develop\Python_app\Microblog\venv\lib\site-packages\flask\app.py", line 2309, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+  File "D:\Develop\Python_app\Microblog\app\routes.py", line 22, in before_request
+    g.locale = str(get_locale())
+NameError: name 'g' is not defined
+2022-08-16 21:24:07,541 ERROR: Exception on /favicon.ico [GET] [in D:\Develop\Python_app\Microblog\venv\lib\site-packages\flask\app.py:1741]
+Traceback (most recent call last):
+  File "D:\Develop\Python_app\Microblog\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\Develop\Python_app\Microblog\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\Develop\Python_app\Microblog\venv\lib\site-packages\flask\app.py", line 1818, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "D:\Develop\Python_app\Microblog\venv\lib\site-packages\flask\app.py", line 2309, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+  File "D:\Develop\Python_app\Microblog\app\routes.py", line 22, in before_request
+    g.locale = str(get_locale())
+NameError: name 'g' is not defined
+2022-08-16 21:24:17,323 ERROR: Exception on /logout [GET] [in D:\Develop\Python_app\Microblog\venv\lib\site-packages\flask\app.py:1741]
+Traceback (most recent call last):
+  File "D:\Develop\Python_app\Microblog\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\Develop\Python_app\Microblog\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\Develop\Python_app\Microblog\venv\lib\site-packages\flask\app.py", line 1818, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "D:\Develop\Python_app\Microblog\venv\lib\site-packages\flask\app.py", line 2309, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+  File "D:\Develop\Python_app\Microblog\app\routes.py", line 22, in before_request
+    g.locale = str(get_locale())
+NameError: name 'g' is not defined
+2022-08-16 21:24:18,899 ERROR: Exception on /index [GET] [in D:\Develop\Python_app\Microblog\venv\lib\site-packages\flask\app.py:1741]
+Traceback (most recent call last):
+  File "D:\Develop\Python_app\Microblog\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\Develop\Python_app\Microblog\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\Develop\Python_app\Microblog\venv\lib\site-packages\flask\app.py", line 1818, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "D:\Develop\Python_app\Microblog\venv\lib\site-packages\flask\app.py", line 2309, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+  File "D:\Develop\Python_app\Microblog\app\routes.py", line 22, in before_request
+    g.locale = str(get_locale())
+NameError: name 'g' is not defined
+2022-08-16 21:25:27,110 INFO: Microblog startup [in D:\Develop\Python_app\Microblog\app\__init__.py:54]
+2022-08-16 21:27:21,152 INFO: Microblog startup [in D:\Develop\Python_app\Microblog\app\__init__.py:54]

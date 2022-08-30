@@ -3,7 +3,7 @@ app.db
 /migrations/*
 !/migrations/versions/
 
-/logs/microblog.*
+/logs/microblog.log*
 !/logs/
 
 messages.pot
