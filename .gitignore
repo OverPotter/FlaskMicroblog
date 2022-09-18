@@ -1,6 +1,5 @@
 app.db
 .idea
-/migrations/*
 !/migrations/versions/
 
 /logs/microblog.log*
